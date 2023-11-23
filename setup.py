@@ -213,13 +213,7 @@ def setup_package():
             from distutils.core import setup
     else:
         numpy_status = get_numpy_status()
-        if numpy_status['up_to_date'] is False:
-            if numpy_status['version']:
-                raise ImportError('Installed numpy is too old, '
-                                  'please "pip install -U numpy".')
-            else:
-                raise ImportError('lap requires numpy, '
-                                  'please "pip install numpy".')
+
 
         from numpy.distutils.core import setup
         metadata['configuration'] = configuration
